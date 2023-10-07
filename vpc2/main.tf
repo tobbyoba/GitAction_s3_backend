@@ -29,9 +29,3 @@ resource "aws_internet_gateway" "igw" {
 
 
 }
-
-resource "aws_route_table" "second_rt" {
-  vpc_id = "aws_vpc.main.id"
-
-
-}
