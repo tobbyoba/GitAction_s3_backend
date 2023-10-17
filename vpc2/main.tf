@@ -1,3 +1,9 @@
+module "IAM_module" {
+  source = "git::https://github.com/tobbyoba/IAM_eks.git//IAM_module"
+  region = "us-east-1"
+}
+
+
 #create vpc
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
@@ -20,9 +26,9 @@ resource "aws_subnet" "public_subnet_cidr" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name                              = "public"
-    "kubernetes.io/role/internal-elb" = "1"
-    "kubernetes.io/cluster/demo"      = "owned"
+    Name                         = "public"
+    "kubernetes.io/role-elb"     = "1"
+    "kubernetes.io/cluster/demo" = "owned"
   }
 }
 
