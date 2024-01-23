@@ -36,7 +36,7 @@ resource "aws_s3_bucket_public_access_block" "backend2" {
   restrict_public_buckets = true
 }
 
-
+#resource 
 resource "aws_kms_key" "mykey" {
   description             = "This key is used to encrypt bucket objects"
   deletion_window_in_days = 10
